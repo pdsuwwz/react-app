@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const AssetsPlugin = require('assets-webpack-plugin')
 
 function resolve(dir) {
   return path.join(__dirname, '../public', dir)
@@ -18,7 +19,13 @@ module.exports = {
   plugins: [
     new webpack.DllPlugin({
       path: path.join(__dirname, '../public/dll', '[name]-manifest.json'),
-      name: '[name]_library'
-    })
+      name: '[name]_library',
+      context: __dirname
+    }),
+    // // 把带hash的dll插入到html中
+    // new AssetsPlugin({
+    //   filename: 'bundle-config.json',
+    //   path: './'
+    // })
   ]
 };
