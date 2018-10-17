@@ -5,8 +5,8 @@ var ROOT_PATH = path.resolve(__dirname);
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var TEM_PATH = './templates';
 var config = require('../src/common/config.js');
-var mainVendor = require('../public/dll/bundle-manifest.json');
-// var bundleConfig = require("../bundle-config.json")
+var mainVendor = require('../public/dll/vendor-manifest.json');
+var bundleConfig = require("../bundle-config.json")
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -66,7 +66,7 @@ module.exports = {
       template: path.resolve(TEM_PATH, 'index.html'),
       filename: 'index.html',
       // // 加载dll文件
-      // vendorJsName: bundleConfig.bundle.js
+      vendorJsName: bundleConfig.vendor.js
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
