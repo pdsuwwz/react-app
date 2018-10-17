@@ -1,0 +1,95 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  -webkit-transition: none;
+          transition: none;
+  // -webkit-user-select: none;
+  //         user-select: none;
+}
+
+input,
+button,
+textarea,
+select,
+a{
+  font-family: "Microsoft YaHei";
+}
+
+
+input,
+button,
+textarea {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+  -moz-outline:none;
+}
+
+[placeholder]::-webkit-input-placeholder {
+  font-size: 13px;
+  color: #ccc;
+}
+
+[placeholder]::-moz-input-placeholder {
+  font-size: 13px;
+  color: #ccc;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  -webkit-transition: opacity 0.5s ease;
+          transition: opacity 0.5s ease;
+  opacity: 0.5;
+}
+
+[placeholder]:focus::-moz-input-placeholder {
+  transition: opacity 0.5s ease;
+  opacity: 0.5;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+input,
+select,
+textarea {
+  border: none;
+  outline: none;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  color: #616161;
+}
+
+li {
+  list-style: none;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: 'WenQuanYi Micro Hei', 'Microsoft Yahei', 'PingFang SC', sans-serif, Arial, Verdana;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+  // font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
