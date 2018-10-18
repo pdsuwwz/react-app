@@ -29,7 +29,7 @@ module.exports = {
   },
   devtool: 'inline',
   devServer: {
-    contentBase: resolve('public'),
+    contentBase: [resolve('public'),resolve('vendor')], // 配置多个数据源
     inline: false, // 取消热更新，并且浏览器控制台不产生构建消息
     host: '127.0.0.1',
     port: config.port,
