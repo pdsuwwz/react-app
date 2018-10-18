@@ -1,23 +1,68 @@
-# [react app](https://github.com/pdsuwwz/react-app) &middot;[![npm version](https://img.shields.io/npm/v/react.svg?style=flat&color=blue)](https://github.com/pdsuwwz/react-app/package.json) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/pdsuwwz/react-app/LICENSE)
+# [react app](https://github.com/pdsuwwz/react-app) &middot;
 
 react 前端项目的基本搭建，若本项目有帮到你，可以点个 star 哈 ✨
 
+基于目前最新的
+
 ## 技术栈：
 
-> react16
-> react-router4
-> react-redux
-> babel7
-> webpack4
-> express
+> react16 + react-router4 + react-redux + babel7 + webpack4 + express
+
 
 ## 开发环境：
 
 ```js
 
+安装包
 npm install OR yarn install 
-npm run dll ------- 分离依赖库
-npm run build ------- 打包文件
-node index ------- 开起服务
 
+抽离依赖库
+npm run dll
+
+模块打包
+npm run build
+
+开起服务
+node index
+
+```
+
+## 目录结构
+
+```
+├── build                                      打包配置，这里包括了抽离库的配置（ dll 配置）
+│   ├── webpack.config.js
+│   └── webpack.dll.config.js
+├── bundle-config.json                         第三方库自动插入模板文件配置
+├── index.js                                   服务开启入口
+├── package.json
+├── postcss.config.js                          css 规范化配置
+├── public                                     打包后的文件目录
+│   ├── bundle.css
+│   ├── bundle.js
+│   ├── dll
+│   │   ├── vendor-manifest.json
+│   │   └── vendor.hashxxx.dll.js
+│   └── index.html
+├── src                                        源文件目录
+│   ├── common                                 公共方法及配置
+│   │   ├── base.js
+│   │   ├── config.js
+│   │   └── utils.js
+│   ├── script                                 核心代码
+│   │   ├── actions                            action creator
+│   │   ├── components                         react 组件
+│   │   ├── constants                          存放 action 所需常量
+│   │   ├── container                          redux 容器组件
+│   │   ├── middleware                         中间件配置
+│   │   ├── reducers                           state 处理函数
+│   │   ├── routes                             路由配置
+│   │   ├── store.js                           存放 state 的对象配置，核心
+│   │   └── app.js                             webpack 入口文件
+│   ├── server                                 静态服务渲染
+│   │   └── index.js
+│   └── styles                                 暂定为公共 css
+│       └── common.scss
+└── templates                                 总模板渲染文件
+    └── index.html
 ```
