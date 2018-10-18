@@ -30,6 +30,7 @@ module.exports = {
   devtool: 'inline',
   devServer: {
     contentBase: resolve('public'),
+    inline: false, // 取消热更新，并且浏览器控制台不产生构建消息
     host: '127.0.0.1',
     port: config.port,
     disableHostCheck: true
