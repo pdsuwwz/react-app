@@ -41,9 +41,6 @@ npm run dev OR npm start
 ├── public                         打包后的文件目录
 │   ├── bundle.css
 │   ├── bundle.js
-│   ├── dll
-│   │   ├── vendor-manifest.json
-│   │   └── vendor.hashxxx.dll.js
 │   └── index.html
 ├── src                            源文件目录
 │   ├── common                     公共方法及配置
@@ -64,6 +61,10 @@ npm run dev OR npm start
 │   │   └── index.js
 │   └── styles                     暂定为公共 css
 │       └── common.scss
+├── vendor                         抽离的公共库目录
+│   └── dll
+│       ├── vendor-manifest.json
+│       └── vendor.xxx.dll.js
 └── templates                      总模板渲染文件
     └── index.html
 ```
