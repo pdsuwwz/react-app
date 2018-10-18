@@ -5,7 +5,7 @@ var ROOT_PATH = path.resolve(__dirname);
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var TEM_PATH = './templates';
 var config = require('../src/common/config.js');
-var mainVendor = require('../public/dll/vendor-manifest.json');
+var mainVendor = require('../vendor/dll/vendor-manifest.json');
 var bundleConfig = require("../bundle-config.json")
 
 function resolve(dir) {

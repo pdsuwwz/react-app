@@ -12,13 +12,13 @@ module.exports = {
     vendor: ['react', 'react-dom', 'react-router-dom']  //提取公共模块
   },
   output: {
-    path: path.join(__dirname, '../public', 'dll'),
+    path: path.join(__dirname, '../vendor', 'dll'),
     filename: '[name].[chunkhash].dll.js',
     library: '[name]_[chunkhash]_library',
   },
   plugins: [
     new webpack.DllPlugin({
-      path: path.join(__dirname, '../public/dll', '[name]-manifest.json'),
+      path: path.join(__dirname, '../vendor/dll', '[name]-manifest.json'),
       name: '[name]_[chunkhash]_library',
       // context: __dirname
       //这里加入上下文会导致打包文件大小变为原来的二倍，原因暂未发现

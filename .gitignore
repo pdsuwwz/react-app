@@ -5,6 +5,7 @@ src/.DS_Store
 *.log
 .idea
 public
+vendor
 src/schemas
 src/models/.DS_Store
 .vscode
