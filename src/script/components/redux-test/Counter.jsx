@@ -45,10 +45,10 @@ export default class Counter extends Component {
           <option value="2">2</option>
           <option value="3">3</option>
         </select>
-        <button onClick={() => this.handleIncrement()}>+</button>
-        <button onClick={() => this.handleDecrement()}>-</button>
-        <button onClick={() => this.handleIncrementOdd()}>Odd +</button>
-        <button onClick={() => this.handleIncrementAsync()}>Async +</button>
+        <button className={cssObj.btn} onClick={() => this.handleIncrement()}>+</button>
+        <button className={cssObj.btn} onClick={() => this.handleDecrement()}>-</button>
+        <button className={cssObj.btn} onClick={() => this.handleIncrementOdd()}>Odd +</button>
+        <button className={cssObj.btn} onClick={() => this.handleIncrementAsync()}>Async +</button>
       </div>
     )
   }
