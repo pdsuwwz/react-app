@@ -8,6 +8,7 @@ import '#/common/base.js';
 // 使用 babel-plugin-react-css-modules 后发现匿名路径 # 对 scss 文件不可用，正在寻找解决方案，，
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
+
 ReactDOM.render((
   <Provider store={store}>
     {router}
