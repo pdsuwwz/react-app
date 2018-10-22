@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlwebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const notifier = require('node-notifier');
 const TEM_PATH = './templates';
 const config = require('../src/common/config.js');
 const mainVendor = require('../vendor/dll/vendor-manifest.json');
@@ -31,7 +32,8 @@ module.exports = {
     inline: false, // 取消热更新，并且浏览器控制台不产生构建消息
     host: '127.0.0.1',
     port: config.port,
-    disableHostCheck: true
+    disableHostCheck: true,
+    quiet: true, // 使用 FriendlyErrorsWebpackPlugin ，可设置此选项来关闭控制台不必要的信息
   },
   module: {
     rules: [{
