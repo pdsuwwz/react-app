@@ -1,12 +1,11 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlwebpackPlugin = require('html-webpack-plugin');
-var ROOT_PATH = path.resolve(__dirname);
+const path = require('path');
+const webpack = require('webpack');
+const HtmlwebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var TEM_PATH = './templates';
-var config = require('../src/common/config.js');
-var mainVendor = require('../vendor/dll/vendor-manifest.json');
-var bundleConfig = require("../bundle-config.json")
+const TEM_PATH = './templates';
+const config = require('../src/common/config.js');
+const mainVendor = require('../vendor/dll/vendor-manifest.json');
+const bundleConfig = require("../bundle-config.json")
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)

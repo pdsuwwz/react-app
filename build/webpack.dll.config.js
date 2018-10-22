@@ -2,10 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const AssetsPlugin = require('assets-webpack-plugin')
 
-function resolve(dir) {
-  return path.join(__dirname, '../public', dir)
-}
-
 module.exports = {
   mode : 'production',
   entry: {
