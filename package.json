@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:pdsuwwz/react-app.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Wisdom",
+  "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.1.2",
     "@babel/runtime-corejs2": "^7.1.2",
