@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import cssObj from './style.scss'
+// import cssObj from './style.scss' // 使用 css-modules
+import './style.scss' // 使用 babel-plugin-react-css-modules
 
 export default class Counter extends Component {
   constructor(props) {
     super(props)
-    console.log(this)
   }
   static propTypes = {
     count: PropTypes.number.isRequired,
@@ -39,16 +39,16 @@ export default class Counter extends Component {
     const { count } = this.props
     return (
       <div>
-        <p className={cssObj.title}>The num is {count}</p>
-        <select className={cssObj.select} ref={e => this.select = e}>
+        <p styleName="title">The num is {count}</p>
+        <select styleName="select" ref={e => this.select = e}>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
         </select>
-        <button onClick={() => this.handleIncrement()}>+</button>
-        <button onClick={() => this.handleDecrement()}>-</button>
-        <button onClick={() => this.handleIncrementOdd()}>Odd +</button>
-        <button onClick={() => this.handleIncrementAsync()}>Async +</button>
+        <button styleName="btn" onClick={() => this.handleIncrement()}>+</button>
+        <button styleName="btn" className="btn btn-warning" onClick={() => this.handleDecrement()}>-</button>
+        <button styleName="btn" onClick={() => this.handleIncrementOdd()}>Odd +</button>
+        <button styleName="btn" onClick={() => this.handleIncrementAsync()}>Async +</button>
       </div>
     )
   }

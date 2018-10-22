@@ -5,7 +5,7 @@ var ROOT_PATH = path.resolve(__dirname);
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 var TEM_PATH = './templates';
 var config = require('../src/common/config.js');
-var mainVendor = require('../public/dll/vendor-manifest.json');
+var mainVendor = require('../vendor/dll/vendor-manifest.json');
 var bundleConfig = require("../bundle-config.json")
 
 function resolve(dir) {
@@ -29,7 +29,8 @@ module.exports = {
   },
   devtool: 'inline',
   devServer: {
-    contentBase: resolve('public'),
+    contentBase: [resolve('public'), resolve('vendor')], // 配置多个数据源
+    inline: false, // 取消热更新，并且浏览器控制台不产生构建消息
     host: '127.0.0.1',
     port: config.port,
     disableHostCheck: true
@@ -84,7 +85,7 @@ module.exports = {
     // 用于配置可解析的后缀名，其中缺省为 js 和 json
     extensions: ['.js', '.jsx', '.json'],
     alias: {
-      '#': resolve('src') // 为项目根目录中 src 目录配置别名 @ 
+      '#': resolve('src'), // 为项目根目录中 src 目录配置别名 #
     }
   }
 };
