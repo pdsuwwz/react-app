@@ -2,14 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlwebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const TEM_PATH = './templates';
 const config = require('../src/common/config.js');
 const mainVendor = require('../vendor/dll/vendor-manifest.json');
 const bundleConfig = require("../bundle-config.json")
 
-function resolve(dir) {
-  return path.join(__dirname, '..', dir)
-}
+resolve = (dir) => path.join(__dirname, '..', dir)
 
 module.exports = {
   mode: 'production',
@@ -79,6 +78,21 @@ module.exports = {
       context: path.join(__dirname, '..'),
       manifest: mainVendor
     }),
+    new FriendlyErrorsWebpackPlugin({
+      clearConsole: false,
+      onErrors: (severity, errors) => {
+        if (severity !== 'error') {
+          return;
+        }
+        const error = errors[0];
+        notifier.notify({
+          title: 'Webpack error',
+          message: `${severity}: ${error.name}`,
+          subtitle: error.file || '',
+        });
+      },
+    }),
+
   ],
   resolve: {
     // 用于配置可解析的后缀名，其中缺省为 js 和 json
