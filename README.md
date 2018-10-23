@@ -1,6 +1,6 @@
 # [react app](https://github.com/pdsuwwz/react-app) &middot;
 
-react 前端项目架构的基本搭建，若本项目有帮到你，可以点个 star 哈 ✨
+react 前端项目架构的基本搭建，若本项目有帮到你，可以赏个 star 哈 ✨
 
 ## 使用技术：
 
@@ -38,7 +38,8 @@ npm run dev OR npm start
 
 ```
 ├── build                          打包配置，这里包括了抽离库的配置（ dll 配置）
-│   ├── webpack.config.js
+│   ├── webpack.base.js
+│   ├── webpack.prod.js
 │   └── webpack.dll.config.js
 ├── .babelrc                       babel 配置
 ├── bundle-config.json             第三方库自动插入模板文件配置
