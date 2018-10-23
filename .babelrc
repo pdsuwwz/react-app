@@ -51,6 +51,11 @@
           }
         }
       }
-    ]
+    ],
+    ["module-resolver", {
+      "alias": {
+        "@commMdule": "./src/styles"
+      }
+    }]
   ]
 }
