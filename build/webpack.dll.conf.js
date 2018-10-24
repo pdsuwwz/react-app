@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const AssetsPlugin = require('assets-webpack-plugin')
 
 module.exports = {
-  mode : 'production',
+  mode: process.env.NODE_ENV,
   entry: {
     vendor: ['react', 'react-dom', 'react-router-dom']  //提取公共模块
   },

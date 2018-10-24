@@ -13,24 +13,19 @@ react 前端项目架构的基本搭建，若本项目有帮到你，可以赏�
 npm install OR yarn install
 ```
 
-```
-// 抽离依赖库
-npm run dll
-```
-
 ---
 
 ```
-// 模块打包
-npm run build
+// 测试环境
+npm run watch:dev
 
-// 开起服务
-node index
+// 生产环境
+npm run watch:build
 
 OR
 
 // 直接使用 WDS 
-npm run dev OR npm start
+npm start
 
 ```
 
@@ -38,9 +33,10 @@ npm run dev OR npm start
 
 ```
 ├── build                          打包配置，这里包括了抽离库的配置（ dll 配置）
-│   ├── webpack.base.js
-│   ├── webpack.prod.js
-│   └── webpack.dll.config.js
+│   ├── webpack.base.conf.js
+│   ├── webpack.dev.conf.js
+│   ├── webpack.prod.conf.js
+│   └── webpack.dll.conf.js
 ├── .babelrc                       babel 配置
 ├── bundle-config.json             第三方库自动插入模板文件配置
 ├── index.js                       服务开启入口
