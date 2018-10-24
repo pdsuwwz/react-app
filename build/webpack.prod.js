@@ -30,26 +30,29 @@ const plugins = [
   }),
 ];
 
-module.exports = merge(baseConfig, {
-  mode: 'production',
-  optimization: {
-    minimize: true,
-  },
-  devtool: 'inline',
-  devServer: {
-    contentBase: [resolve('public'), resolve('vendor')], // 配置多个数据源
-    inline: false, // 取消热更新，并且浏览器控制台不产生构建消息
-    host: '127.0.0.1',
-    port: config.port,
-    disableHostCheck: true,
-    quiet: true, // 使用 FriendlyErrorsWebpackPlugin ，可设置此选项来关闭控制台不必要的信息
-  },
-  resolve: {
-    // 用于配置可解析的后缀名，其中缺省为 js 和 json
-    extensions: ['.js', '.jsx', '.json'],
-    alias: {
-      '#': resolve('src'), // 为项目根目录中 src 目录配置别名 #
-    }
-  },
-  plugins
-});
+module.exports = env => {
+  console.log(env)
+  return merge(baseConfig, {
+    mode: 'production',
+    optimization: {
+      minimize: true,
+    },
+    devtool: 'inline',
+    devServer: {
+      contentBase: [resolve('public'), resolve('vendor')], // 配置多个数据源
+      inline: false, // 取消热更新，并且浏览器控制台不产生构建消息
+      host: '127.0.0.1',
+      port: config.port,
+      disableHostCheck: true,
+      quiet: true, // 使用 FriendlyErrorsWebpackPlugin ，可设置此选项来关闭控制台不必要的信息
+    },
+    resolve: {
+      // 用于配置可解析的后缀名，其中缺省为 js 和 json
+      extensions: ['.js', '.jsx', '.json'],
+      alias: {
+        '#': resolve('src'), // 为项目根目录中 src 目录配置别名 #
+      }
+    },
+    plugins
+  });
+}
