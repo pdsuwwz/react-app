@@ -34,9 +34,6 @@ module.exports = {
       test: /\.css/,
       use: [MiniCssExtractPlugin.loader, "css-loader"],
     }, {
-      test: /\.json$/,
-      loader: 'json-loader'
-    }, {
       test: /\.png|jpg|jpeg|bmp|gif|ttf|woff|woff2|eot|svg$/,
       use: "file-loader?limit=8192&name=[path][name].[ext]"
     }]

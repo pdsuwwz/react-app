@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dll": "webpack --progress --colors --config build/webpack.dll.config.js",
-    "build": "webpack --progress --colors --config build/webpack.prod.js",
+    "build": "webpack --progress --colors --env.production --config build/webpack.prod.js",
     "dev": "webpack-dev-server --progress --colors --hot --inline --history-api-fallback --config build/webpack.prod.js",
     "start": "npm run dev"
   },
