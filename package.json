@@ -4,10 +4,12 @@
   "description": "this is a (react + react-router + redux + webpack + express) test",
   "main": "index.js",
   "scripts": {
-    "dll": "webpack --progress --colors --config build/webpack.dll.config.js",
-    "build": "webpack --progress --colors --env.production --config build/webpack.prod.conf.js",
-    "dev": "webpack-dev-server --progress --colors --hot --inline --history-api-fallback --config build/webpack.prod.conf.js",
-    "start": "npm run dev"
+    "dll": "webpack --progress --colors --config build/webpack.dll.conf.js",
+    "build": "NODE_ENV=production webpack --progress --colors --config build/webpack.prod.conf.js",
+    "dev": "NODE_ENV=development webpack --progress --colors --config build/webpack.dev.conf.js",
+    "start": "NODE_ENV=development npm run dll && webpack-dev-server --progress --colors --hot --inline --history-api-fallback --config build/webpack.dev.conf.js",
+    "watch:dev": "NODE_ENV=development npm run dll && npm run dev && node index --watch --progress",
+    "watch:build": "NODE_ENV=production npm run dll && npm run build && node index --watch --progress"
   },
   "repository": {
     "type": "git",
@@ -80,6 +82,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "sugarss": "^2.0.0",
+    "terser-webpack-plugin": "^1.1.0",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
