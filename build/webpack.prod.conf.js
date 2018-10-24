@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlwebpackPlugin = require('html-webpack-plugin');
 const config = require('../src/common/config.js');
 const merge = require('webpack-merge');
-const baseConfig = require('./webpack.base.js')
+const baseConfig = require('./webpack.base.conf.js')
 const bundleConfig = require("../bundle-config.json")
 const TEM_PATH = './templates';
 const resolve = (dir) => path.join(__dirname, '..', dir)
