@@ -3,10 +3,11 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
-const mainVendor = require('../vendor/dll/vendor-manifest.json');
+const manifest = require('../vendor/dll/vendor-manifest.json');
 const resolve = (dir) => path.join(__dirname, '..', dir)
 
 module.exports = {
+  mode: process.env.NODE_ENV,
   entry: {
     bundle: ['@babel/polyfill', './src/script/app.js'],
   },
@@ -26,16 +27,20 @@ module.exports = {
       test: /\.scss/,
       use: [MiniCssExtractPlugin.loader, "css-loader?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]", {
         loader: 'postcss-loader',
-        options: { ident: 'postcss', sourceMap: true, config: { path: resolve('postcss.config.js') } },
+        options: { ident: 'postcss', sourceMap: true, config: { path: resolve('postcss.config.js') }, publicPath: '../' },
       }, "sass-loader"],
       exclude: resolve('node_modules'),
       include: resolve('src')
     }, {
       test: /\.css/,
       use: [MiniCssExtractPlugin.loader, "css-loader"],
+    },
+    {
+      test: /\.(png|jpg|jpeg|bmp|gif|webp)$/,
+      loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'
     }, {
-      test: /\.png|jpg|jpeg|bmp|gif|ttf|woff|woff2|eot|svg$/,
-      use: "file-loader?limit=8192&name=[path][name].[ext]"
+      test: /\.(ttf|woff|woff2|eot|svg)$/,
+      loader: "file-loader?limit=8192&name=[path][name].[ext]",
     }]
   },
   plugins: [
@@ -49,7 +54,7 @@ module.exports = {
     }),
     new webpack.DllReferencePlugin({
       context: path.join(__dirname, '..'),
-      manifest: mainVendor
+      manifest
     }),
     new FriendlyErrorsWebpackPlugin({
       clearConsole: false,

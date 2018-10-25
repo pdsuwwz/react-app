@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 // import cssObj from './style.scss' // 使用 css-modules
 import './style.scss' // 使用 babel-plugin-react-css-modules
+import DATA from './constants'
 
 export default class Counter extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ export default class Counter extends Component {
   render() {
     const { count } = this.props
     return (
-      <div>
+      <div styleName="bg" style={{backgroundImage: `url(${DATA.hello})`}}>
         <p styleName="title">The num is {count}</p>
         <select styleName="select" ref={e => this.select = e}>
           <option value="1">1</option>
@@ -49,6 +50,7 @@ export default class Counter extends Component {
         <button styleName="btn" className="btn btn-warning" onClick={() => this.handleDecrement()}>-</button>
         <button styleName="btn" onClick={() => this.handleIncrementOdd()}>Odd +</button>
         <button styleName="btn" onClick={() => this.handleIncrementAsync()}>Async +</button>
+        <div styleName="test-relativeimg"></div>
       </div>
     )
   }

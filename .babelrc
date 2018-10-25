@@ -54,7 +54,8 @@
     ],
     ["module-resolver", {
       "alias": {
-        "@commMdule": "./src/styles"
+        "@commMdule": "./src/styles",
+        "@images": "./src/images"
       }
     }]
   ]
