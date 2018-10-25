@@ -4,12 +4,13 @@
   "description": "this is a (react + react-router + redux + webpack + express) test",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf vendor & rimraf public",
     "dll": "webpack --progress --colors --config build/webpack.dll.conf.js",
-    "build": "NODE_ENV=production webpack --progress --colors --config build/webpack.prod.conf.js",
-    "dev": "NODE_ENV=development webpack --progress --colors --config build/webpack.dev.conf.js",
-    "start": "NODE_ENV=development npm run dll && webpack-dev-server --progress --colors --hot --inline --history-api-fallback --config build/webpack.dev.conf.js",
-    "watch:dev": "NODE_ENV=development npm run dll && npm run dev && node index --watch --progress",
-    "watch:build": "NODE_ENV=production npm run dll && npm run build && node index --watch --progress"
+    "prebuild": "npm run clean",
+    "predev": "npm run clean",
+    "build": "NODE_ENV=production npm run dll && webpack --progress --colors --config build/webpack.prod.conf.js && node index",
+    "dev": "NODE_ENV=development npm run dll && webpack --progress --colors --config build/webpack.dev.conf.js && node index",
+    "start": "NODE_ENV=development npm run dll && webpack-dev-server --progress --colors --hot --inline --history-api-fallback --config build/webpack.dev.conf.js"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,11 @@
   "dependencies": {
     "@babel/runtime": "^7.1.2",
     "@babel/runtime-corejs2": "^7.1.2",
+    "axios": "^0.18.0",
     "bootstrap": "^4.1.3",
     "config": "^1.26.2",
     "echarts": "^3.6.2",
-    "express": "^4.15.4",
+    "express": "^4.16.4",
     "history": "^4.6.3",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.4",
@@ -79,6 +81,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-scss": "^2.0.0",
     "redux-devtools-extension": "^2.13.5",
+    "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "sugarss": "^2.0.0",

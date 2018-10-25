@@ -17,10 +17,10 @@ npm install OR yarn install
 
 ```
 // 测试环境
-npm run watch:dev
+npm run dev
 
 // 生产环境
-npm run watch:build
+npm run build
 
 OR
 
