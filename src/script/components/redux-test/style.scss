@@ -20,3 +20,20 @@
   cursor: pointer;
   border: 1px solid #000;
 }
+
+.bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .test-relativeimg{
+    width: 200px;
+    height: 200px;
+    background-image: url("./assets/black-coffee.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
