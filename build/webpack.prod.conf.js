@@ -35,7 +35,7 @@ module.exports = merge(baseConfig, {
   optimization: {
     minimize: true,
   },
-  devtool: 'inline',
+  devtool: 'cheap-module-source-map',
   devServer: {
     contentBase: [resolve('public'), resolve('vendor')], // 配置多个数据源
     inline: false, // 取消热更新，并且浏览器控制台不产生构建消息

@@ -13,10 +13,11 @@ const optimization = {
   splitChunks: {
     chunks: 'all',
     cacheGroups: {
-      vendors: {
+      common: {
         test: /[\\/]node_modules[\\/]/,
         priority: -10,
         maxSize: 512000,
+        minChunks: 2,
       },
     },
   },
