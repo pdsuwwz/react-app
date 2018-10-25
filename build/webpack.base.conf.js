@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
 const manifest = require('../vendor/dll/vendor-manifest.json');
@@ -36,7 +37,7 @@ module.exports = {
       use: [MiniCssExtractPlugin.loader, "css-loader"],
     },
     {
-      test: /\.(png|jpg|jpeg|bmp|gif|webp)$/,
+      test: /\.(png|jpe?g|bmp|gif|webp|svg)(\?.*)?$/,
       loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'
     }, {
       test: /\.(ttf|woff|woff2|eot|svg)$/,
@@ -56,6 +57,13 @@ module.exports = {
       context: path.join(__dirname, '..'),
       manifest
     }),
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: resolve('src/images'),
+    //     to: resolve('public/static'),
+    //     ignore: ['.*']
+    //   }
+    // ]), // 暂时用不了，因为图片资源会被打包，这样的话就导致复制和打包操作重复了
     new FriendlyErrorsWebpackPlugin({
       clearConsole: false,
       onErrors: (severity, errors) => {
