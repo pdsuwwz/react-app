@@ -6,7 +6,7 @@ src/.DS_Store
 .idea
 public
 vendor
-bundle-config.json
+/bundle-config.json
 src/schemas
 src/models/.DS_Store
 .vscode
