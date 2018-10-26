@@ -38,10 +38,27 @@ module.exports = {
     },
     {
       test: /\.(png|jpe?g|bmp|gif|webp|svg)(\?.*)?$/,
-      loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'
-    }, {
-      test: /\.(ttf|woff|woff2|eot|svg)$/,
-      loader: "file-loader?limit=8192&name=[path][name].[ext]",
+      loader: 'url-loader',
+      options: {
+        limit: 8192,
+        name: 'assets/img/[name].[hash:7].[ext]'
+      }
+    },
+    {
+      test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+      loader: 'url-loader',
+      options: {
+        limit: 8192,
+        name: 'assets/media/[name].[hash:7].[ext]'
+      }
+    },
+    {
+      test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+      loader: "url-loader",
+      options: {
+        limit: 8192,
+        name: 'assets/fonts/[name].[hash:7].[ext]'
+      }
     }]
   },
   plugins: [

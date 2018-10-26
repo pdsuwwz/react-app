@@ -11,13 +11,14 @@ const resolve = (dir) => path.join(__dirname, '..', dir)
 
 const optimization = {
   splitChunks: {
-    chunks: 'all',
     cacheGroups: {
       common: {
         test: /[\\/]node_modules[\\/]/,
-        priority: -10,
+        minSize: 30000,
         maxSize: 512000,
         minChunks: 2,
+        chunks: 'all',
+        priority: 1
       },
     },
   },
