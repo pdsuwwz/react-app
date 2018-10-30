@@ -9,7 +9,6 @@ import '@commMdule/common.scss';
 // 2018年10月23日，匿名路径问题已解决，在 .babelrc 中配置 module-resolver，及在 webpack 配置文件中加入 resolve.extensions 属性即可。
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
-
 ReactDOM.render((
   <Provider store={store}>
     {router}

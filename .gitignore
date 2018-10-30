@@ -3,6 +3,7 @@ node_modules
 .DS_Store
 src/.DS_Store
 *.log
+.cache
 .idea
 public
 vendor

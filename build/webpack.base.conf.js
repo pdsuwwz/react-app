@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const fs = require('fs');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
@@ -20,7 +21,25 @@ module.exports = {
     hints: false
   },
   module: {
-    rules: [{
+    rules: [
+      {
+      enforce: 'pre',
+      test: /\.(jsx?)$/,
+      loader: 'eslint-loader',
+      include: resolve('src'),
+      options: {
+        fix: true,
+        cache: resolve('.cache/eslint'),
+        failOnError: true, // 生产环境发现代码不合法，则中断编译
+        useEslintrc: true,
+        configFile: resolve('.eslintrc.js'),
+        formatter: require('eslint-friendly-formatter'),
+        // baseConfig: {
+        //   extends: [resolve('.eslintrc.js')]
+        // }
+      }
+    }, 
+    {
       test: /\.js|jsx$/,
       exclude: /node_modules/,
       loader: "babel-loader"
