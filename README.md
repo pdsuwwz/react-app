@@ -38,6 +38,8 @@ npm start
 │   ├── webpack.prod.conf.js
 │   └── webpack.dll.conf.js
 ├── .babelrc                       babel 配置
+├── .eslintignore                  eslint 忽略检测的代码
+├── .eslintrc.js                   eslint 配置项
 ├── bundle-config.json             第三方库自动插入模板文件配置
 ├── index.js                       服务开启入口
 ├── package.json
