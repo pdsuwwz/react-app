@@ -47,7 +47,7 @@ module.exports = {
       test: /\.scss/,
       use: [MiniCssExtractPlugin.loader, "css-loader?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]", {
         loader: 'postcss-loader',
-        options: { ident: 'postcss', sourceMap: true, config: { path: resolve('postcss.config.js') }, publicPath: '../' },
+        options: { ident: 'postcss', sourceMap: true, config: { path: resolve('postcss.config.js') } },
       }, "sass-loader"],
       exclude: resolve('node_modules'),
       include: resolve('src')
