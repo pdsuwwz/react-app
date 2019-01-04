@@ -8,9 +8,9 @@
     "dll": "webpack --progress --colors --config build/webpack.dll.conf.js",
     "prebuild": "npm run clean",
     "predev": "npm run clean",
-    "build": "NODE_ENV=production npm run dll && webpack --progress --colors --config build/webpack.prod.conf.js && node index",
-    "dev": "NODE_ENV=development npm run dll && webpack --progress --colors --config build/webpack.dev.conf.js && node index",
-    "start": "NODE_ENV=development npm run dll && webpack-dev-server --progress --colors --inline --history-api-fallback --config build/webpack.dev.conf.js"
+    "build": "cross-env NODE_ENV=production npm run dll && webpack --progress --colors --config build/webpack.prod.conf.js && node index",
+    "dev": "cross-env NODE_ENV=development npm run dll && webpack --progress --colors --config build/webpack.dev.conf.js && node index",
+    "start": "cross-env NODE_ENV=development npm run dll && webpack-dev-server --progress --colors --inline --history-api-fallback --config build/webpack.dev.conf.js"
   },
   "repository": {
     "type": "git",
