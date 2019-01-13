@@ -34,9 +34,9 @@ module.exports = {
         useEslintrc: true,
         configFile: resolve('.eslintrc.js'),
         formatter: require('eslint-friendly-formatter'),
-        // baseConfig: {
-        //   extends: [resolve('.eslintrc.js')]
-        // }
+        baseConfig: {
+          extends: [resolve('.eslintrc.js')]
+        }
       }
     }, 
     {
