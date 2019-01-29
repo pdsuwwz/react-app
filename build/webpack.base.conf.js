@@ -11,7 +11,7 @@ const resolve = (dir) => path.join(__dirname, '..', dir)
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
-    bundle: ['@babel/polyfill', './src/script/app.js'],
+    bundle: ['@babel/polyfill', './src/styles/index.js', './src/script/app.js'],
   },
   output: {
     path: resolve('public'),
