@@ -9,8 +9,8 @@
 * {
   -webkit-transition: none;
           transition: none;
-  // -webkit-user-select: none;
-  //         user-select: none;
+  /* -webkit-user-select: none; */
+           /* user-select: none; */
 }
 
 input,
@@ -83,8 +83,8 @@ body {
   height: 100%;
   font-family: 'WenQuanYi Micro Hei', 'Microsoft Yahei', 'PingFang SC', sans-serif, Arial, Verdana;
   -webkit-font-smoothing: antialiased;
-  background: #fff;
-  // font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  background-color: #fff;
+  /* font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important; */
 }
 
 .clearfix:after {
