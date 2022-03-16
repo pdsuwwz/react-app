@@ -1,5 +1,7 @@
 # [react app](https://github.com/pdsuwwz/react-app) &middot;
 
+> 💡 **该项目技术栈过旧，现已使用 vite 重写 👉 请移步此仓库查看最新进展 [📦 vite-react-starter](https://github.com/pdsuwwz/vite-react-starter)**
+
 react 前端项目架构的基本搭建，若本项目有帮到你，可以赏个 star 哈 ✨
 
 ## 使用技术：
